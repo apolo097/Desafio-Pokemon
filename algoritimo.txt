@@ -1,0 +1,17 @@
+1. Ler o arquivo pokemon_base.csv.
+2. Para cada Pokémon:
+   1. Pegar o nome.
+   2. Consultar a PokeAPI.
+   3. Se encontrar:
+      - pegar tipos;
+      - pegar stats;
+      - pegar altura;
+      - pegar peso;
+      - pegar primeira habilidade;
+      - calcular soma total de stats.
+   4. Se não encontrar:
+      - registrar erro;
+      - continuar o programa.
+3. Salvar todos os dados em pokemon_completo.csv.
+4. Usar os dados completos para responder as perguntas.
+5. Salvar as respostas em respostas.txt.
