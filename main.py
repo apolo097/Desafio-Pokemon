@@ -7,9 +7,10 @@ def buscar_pokemon(nome):
     url = f"https://pokeapi.co/api/v2/pokemon/{nome}"
 
     resposta = requests.get(url, timeout=10) ##colocado timeout so para caso trave algo ele ficar no maximo 10 s
-    if resposta.status_code != 200:
-        print(f"Pokemon nao encontrado: {nome}")
+
+    if resposta.status_code != 200:        
         return None
+    
     dados = resposta.json()
 
 
@@ -50,6 +51,7 @@ def buscar_pokemon(nome):
     return pokemon
 
 pokemons = []
+pokemons_nao_encontrados = []
 
 ##Ler o csv
 with open("pokemon_base.csv", "r", encoding="utf-8") as arquivo:
@@ -65,6 +67,8 @@ with open("pokemon_base.csv", "r", encoding="utf-8") as arquivo:
 
         if pokemon is not None:
             pokemons.append(pokemon)
+        else:
+            pokemons_nao_encontrados.append(nome)
 
 # O que faremos para a primeira pergunta é
 # procure dentro da lista pokemons o item cujo campo total_stats é o maior
@@ -169,6 +173,8 @@ print("5. Time dos sonhos com maior soma de stats:")
 for pokemon in top_6_time:
     print(pokemon["nome"], pokemon["total_stats"])
 
+
+# Montar o arquivo CSV
 colunas = [
     "nome",
     "tipo(s)",
@@ -183,11 +189,43 @@ colunas = [
     "habilidade(s)",
     "total_stats"
 ]
-##Como pokemons é uma lista de dicionários, dá para salvar com csv.DictWriter.
-with open("pokemon_completo.csv", "w", encoding="utf-8", newline="") as arquivo:
-    escritor = csv.DictWriter(arquivo, fieldnames=colunas) ##fieldnames=colunas define a ordem das colunas
 
+with open("pokemon_completo.csv", "w", encoding="utf-8", newline="") as arquivo:
+    escritor = csv.DictWriter(arquivo, fieldnames=colunas) ##fieldnames=colunas define a ordem das colunas 
+    ##Como pokemons é uma lista de dicionários, dá para salvar com csv.DictWriter.
     escritor.writeheader() ## writeheader escreve o cabeçalho
     escritor.writerows(pokemons)  ##writerows(pokemons) escreve todos os dicionarios da lista
 
-    
+# Montar o arquivo TXT
+respostas = []
+
+respostas.append(
+    f"1. Pokémon com maior soma total de stats: {maior_total['nome']} ({maior_total['total_stats']})"
+)
+
+respostas.append(
+    f"2. Tipo com maior média de Attack: {tipo_maior_media} ({media_attack_por_tipo[tipo_maior_media]:.2f})"
+)
+
+respostas.append(
+    f"3. Quantidade de Pokémon do tipo Water: {quantidade_water}"
+)
+
+respostas.append("4. Top 5 mais rápidos:")
+for pokemon in top_5_rapidos:
+    respostas.append(f"{pokemon['nome']} {pokemon['speed']}")
+
+respostas.append("5. Time dos sonhos com maior soma de stats:")
+for pokemon in top_6_time:
+    respostas.append(f"{pokemon['nome']} {pokemon['total_stats']}")
+
+with open("respostas.txt", "w", encoding="utf-8") as arquivo:
+    arquivo.write("\n".join(respostas))
+
+
+## Somente para mostrar quais pokemons nao foram buscados e nao fizeram parte da pesquisa
+
+if pokemons_nao_encontrados:
+    print("Pokémons que não fizeram parte da pesquisa pois não foram encontrados:", ", ".join(pokemons_nao_encontrados))
+else:
+    print("Todos os Pokémon foram encontrados.")

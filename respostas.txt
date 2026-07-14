@@ -1,0 +1,16 @@
+1. Pokémon com maior soma total de stats: mewtwo (680)
+2. Tipo com maior média de Attack: dragon (133.00)
+3. Quantidade de Pokémon do tipo Water: 5
+4. Top 5 mais rápidos:
+mewtwo 130
+greninja 122
+alakazam 120
+raichu 110
+gengar 110
+5. Time dos sonhos com maior soma de stats:
+mewtwo 680
+dragonite 600
+salamence 600
+metagross 600
+garchomp 600
+arcanine 555

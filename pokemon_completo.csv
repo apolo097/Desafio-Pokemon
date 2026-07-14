@@ -1,0 +1,30 @@
+nome,tipo(s),hp,attack,defense,special_attack,special_defense,speed,altura,peso,habilidade(s),total_stats
+charizard,"fire, flying",78,84,78,109,85,100,1.7,90.5,"blaze, solar-power",534
+blastoise,water,79,83,100,85,105,78,1.6,85.5,"torrent, rain-dish",530
+pikachu,electric,35,55,40,50,50,90,0.4,6.0,"static, lightning-rod",320
+raichu,electric,60,90,55,90,80,110,0.8,30.0,"static, lightning-rod",485
+nidoqueen,"poison, ground",90,92,87,75,85,76,1.3,60.0,"poison-point, rivalry, sheer-force",505
+nidoking,"poison, ground",81,102,77,85,75,85,1.4,62.0,"poison-point, rivalry, sheer-force",505
+arcanine,fire,90,110,80,100,80,95,1.9,155.0,"intimidate, flash-fire, justified",555
+alakazam,psychic,55,50,45,135,95,120,1.5,48.0,"synchronize, inner-focus, magic-guard",500
+machamp,fighting,90,130,80,65,85,55,1.6,130.0,"guts, no-guard, steadfast",505
+golem,"rock, ground",80,120,130,55,65,45,1.4,300.0,"rock-head, sturdy, sand-veil",495
+gengar,"ghost, poison",60,65,60,130,75,110,1.5,40.5,cursed-body,500
+exeggutor,"grass, psychic",95,95,85,125,75,55,2.0,120.0,"chlorophyll, harvest",530
+gyarados,"water, flying",95,125,79,60,100,81,6.5,235.0,"intimidate, moxie",540
+lapras,"water, ice",130,85,80,85,95,60,2.5,220.0,"water-absorb, shell-armor, hydration",535
+snorlax,normal,160,110,65,65,110,30,2.1,460.0,"immunity, thick-fat, gluttony",540
+dragonite,"dragon, flying",91,134,95,100,100,80,2.2,210.0,"inner-focus, multiscale",600
+mewtwo,psychic,106,110,90,154,90,130,2.0,122.0,"pressure, unnerve",680
+typhlosion,fire,78,84,78,109,85,100,1.7,79.5,"blaze, flash-fire",534
+feraligatr,water,85,105,100,79,83,78,2.3,88.8,"torrent, sheer-force",530
+espeon,psychic,65,65,60,130,95,110,0.9,26.5,"synchronize, magic-bounce",525
+scizor,"bug, steel",70,130,100,55,80,65,1.8,118.0,"swarm, technician, light-metal",500
+blaziken,"fire, fighting",80,120,70,110,70,80,1.9,52.0,"blaze, speed-boost",530
+gardevoir,"psychic, fairy",68,65,65,125,115,80,1.6,48.4,"synchronize, trace, telepathy",518
+aggron,"steel, rock",70,110,180,60,60,50,2.1,360.0,"sturdy, rock-head, heavy-metal",530
+salamence,"dragon, flying",95,135,80,110,80,100,1.5,102.6,"intimidate, moxie",600
+metagross,"steel, psychic",80,135,130,95,90,70,1.6,550.0,"clear-body, light-metal",600
+garchomp,"dragon, ground",108,130,95,80,85,102,1.9,95.0,"sand-veil, rough-skin",600
+lucario,"fighting, steel",70,110,70,115,70,90,1.2,54.0,"steadfast, inner-focus, justified",525
+greninja,"water, dark",72,95,67,103,71,122,1.5,40.0,"torrent, protean",530
