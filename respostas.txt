@@ -10,7 +10,7 @@ gengar 110
 5. Time dos sonhos com maior soma de stats:
 mewtwo 680
 dragonite 600
+tyranitar 600
 salamence 600
 metagross 600
 garchomp 600
-arcanine 555
