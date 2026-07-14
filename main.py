@@ -64,4 +64,23 @@ with open("pokemon_base.csv", "r", encoding="utf-8") as arquivo:
 
 print(pokemons)
 
+colunas = [
+    "nome",
+    "tipo(s)",
+    "hp",
+    "attack",
+    "defense",
+    "special_attack",
+    "special_defense",
+    "speed",
+    "altura",
+    "peso",
+    "habilidade(s)",
+    "total_stats"
+]
+##Como pokemons é uma lista de dicionários, dá para salvar com csv.DictWriter.
+with open("pokemon_completo.csv", "w", encoding="utf-8", newline="") as arquivo:
+    escritor = csv.DictWriter(arquivo, fieldnames=colunas) ##fieldnames=colunas define a ordem das colunas
 
+    escritor.writeheader() ## writeheader escreve o cabeçalho
+    escritor.writerows(pokemons)  ##writerows(pokemons) escreve todos os dicionarios da lista
