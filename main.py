@@ -1,6 +1,7 @@
-def buscar_pokemon(nome):
+import requests
+import csv
 
-    import requests
+def buscar_pokemon(nome):
 
     url = f"https://pokeapi.co/api/v2/pokemon/{nome}"
 
@@ -44,6 +45,19 @@ def buscar_pokemon(nome):
 
     return pokemon
 
-pokemon = buscar_pokemon("torchic")
-print(pokemon)
+pokemons = []
+
+##Leu o csv
+with open("pokemon_base.csv", "r", encoding="utf-8") as arquivo:
+    leitor = csv.DictReader(arquivo)
+
+    for linha in leitor:
+        nome = linha["nome"]
+
+        pokemon = buscar_pokemon(nome)
+
+        pokemons.append(pokemon)
+
+print(pokemons)
+
 
