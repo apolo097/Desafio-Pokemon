@@ -5,21 +5,37 @@ url = "https://pokeapi.co/api/v2/pokemon/charizard"
 resposta = requests.get(url)
 dados = resposta.json()
 
-print("Nome:", dados["name"])
-
-print("\nTipos:")
+tipos = []
 for item in dados["types"]:
-    print(item["type"]["name"])
+    tipos.append(item["type"]["name"])
 
-print("\nHabilidades:")
+habilidades = []
 for item in dados["abilities"]:
-    print(item["ability"]["name"])
+    habilidades.append(item["ability"]["name"])
 
-print("\nStats:")
+stats = {}
 for item in dados["stats"]:
     nome_stat = item["stat"]["name"]
     valor_stat = item["base_stat"]
+    stats[nome_stat] = valor_stat
 
-    print(nome_stat, valor_stat)
+## print(stats) -> caso queira ver que aqui ele esta juntando em uma lista todos juntos. Como se eu criasse outro json de dados. Idem ao que vem da api por exemplo. ai temos dados e stats
 
-    ##Só para analisarmos que dentro do padrão python temos item ["type"]["name"] -> dentro de item pegue type e dentro de type pegue name.
+pokemon = {    
+    "nome": dados["name"],
+    "tipo(s)": ", ".join(tipos),
+    "hp": stats["hp"],
+    "attack":stats["attack"],
+    "defense":stats["defense"],
+    "special_attack":stats["special-attack"],
+    "special_defense":stats["special-defense"],
+    "speed":stats["speed"],
+    "altura":dados["height"]/10,
+    "peso":dados["weight"]/10, ##dividido por 10 para ficar em medidas humanas
+    "habilidade(s)": ", ".join(habilidades),
+    "total_stats":sum(stats.values())
+}
+
+
+print(pokemon)
+
