@@ -6,6 +6,9 @@ def buscar_pokemon(nome):
     url = f"https://pokeapi.co/api/v2/pokemon/{nome}"
 
     resposta = requests.get(url)
+    if resposta.status_code != 200:
+        print(f"Pokemon nao encontrado: {nome}")
+        return None
     dados = resposta.json()
 
 
@@ -56,7 +59,8 @@ with open("pokemon_base.csv", "r", encoding="utf-8") as arquivo:
 
         pokemon = buscar_pokemon(nome)
 
-        pokemons.append(pokemon)
+        if pokemon is not None:
+            pokemons.append(pokemon)
 
 print(pokemons)
 
